@@ -1,14 +1,15 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc_forms2/custom_validators.dart';
 import 'package:flutter_bloc_forms2/main.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 
 class FormRegistrationBloc extends FormBloc<String, String> {
   final testField = TextFieldBloc(validators:[FieldBlocValidators.required]);
-  final nameField = TextFieldBloc(validators: [requiredValues]);
+  final nameField = TextFieldBloc(validators: [CustomValidators.nameRequired]);
   final emailField = TextFieldBloc(
-      validators: [FieldBlocValidators.required, FieldBlocValidators.email]);
+      validators: [CustomValidators.emailRequired]);
   final dob = InputFieldBloc<DateTime?, Object>(initialValue: null);
   final gender = SelectFieldBloc(
       items: ['Male', 'Female'], validators: [FieldBlocValidators.required]);

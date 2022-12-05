@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc_forms2/custom_validators.dart';
 import 'package:flutter_bloc_forms2/register_page.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 
@@ -32,8 +33,8 @@ class MyApp extends StatelessWidget {
 }
 
 class FieldsFormBloc extends FormBloc<String, String> {
-  final nameText = TextFieldBloc(validators: [FieldBlocValidators.required]);
-  final pwdText = TextFieldBloc(validators: [FieldBlocValidators.required]);
+  final nameText = TextFieldBloc(validators: [CustomValidators.nameRequired]);
+  final pwdText = TextFieldBloc(validators: [CustomValidators.passwordRequired]);
 
   FieldsFormBloc() : super(autoValidate: true) {
     addFieldBlocs(fieldBlocs: [
