@@ -68,7 +68,8 @@ class RegistrationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => FormRegistrationBloc(),
-      child: Builder(builder: (context) {
+      child: Builder(
+          builder: (context) {
         final registrationBloc = BlocProvider.of<FormRegistrationBloc>(context);
         return Scaffold(
           appBar: AppBar(
